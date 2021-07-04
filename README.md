@@ -31,13 +31,13 @@ output = stache.render(template, {'foo': True, 'bar': 'Hello world!'}, lambda x:
 	template = stache.parse('{{#highlight}}{{code}}{{/highlight}}')
 	output = stache.render(template, {'code': …, 'highlight': highlight}, escape)
 	```
+-	`.` to access the current context object: `{{.}}`
 -	context inheritance: you access variables from the outer contexts (unless they are shadowed)
 -	lines with standalone template tags are removed from the output
 
 # Not supported
 
 -	changing delimiters
--	`.` to access the current context object: `{{.}}`
 -	`.` to go down the context hierarchy: `{{foo.bar}}`
 -	`{{{foo}}}` for safe variables (use `{{&foo}}` instead)
 -	multi line comments

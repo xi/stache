@@ -25,7 +25,7 @@ class Node:
 class TemplateError(Exception):
     def __str__(self):
         node = self.args[0]
-        return f'"{node.token}" in {node.file}:{node.line}'
+        return f'"{node.token}" in {node.file}:{node.lineno}'
 
 
 def tokenize(s: str, path: str) -> Iterable[Node]:

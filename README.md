@@ -32,6 +32,7 @@ output = stache.render(template, {'foo': True, 'bar': 'Hello world!'}, lambda x:
 	output = stache.render(template, {'code': …, 'highlight': highlight}, escape)
 	```
 -	`.` to access the current context object: `{{.}}`
+-	missing variables are treated as empty strings/falsy
 -	context inheritance: you access variables from the outer contexts (unless they are shadowed)
 -	lines with standalone template tags are removed from the output
 

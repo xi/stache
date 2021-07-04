@@ -46,7 +46,7 @@ def tokenize(s: str, path: str) -> Iterable[Node]:
         yield Node('text', tail, path, line, i, [])
 
 
-def parse(s: str, path: str) -> list[Node]:
+def parse(s: str, path: str='') -> list[Node]:
     stack: list[list[Node]] = [[]]
     for node in tokenize(s, path):
         if node.type in ['#', '^']:

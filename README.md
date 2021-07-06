@@ -2,7 +2,7 @@ Yet another [mustache](http://mustache.github.io/mustache.5.html) implementation
 
 # Usage
 
-```
+```python
 import stache
 from html import escape
 
@@ -33,7 +33,7 @@ output = stache.render(template, {'foo': True, 'bar': 'Hello world!'}, lambda x:
 	```
 -	`.` to access the current context object: `{{.}}`
 -	missing variables are treated as empty strings/falsy
--	context inheritance: you access variables from the outer contexts (unless they are shadowed)
+-	context inheritance: you can access variables from the outer contexts (unless they are shadowed)
 -	lines with standalone template tags are removed from the output
 
 # Not supported

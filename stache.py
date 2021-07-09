@@ -19,11 +19,11 @@ class Node:
     file: str
     line: str
     lineno: int
-    children: list
+    children: list[Node]
 
 
 class TemplateError(Exception):
-    def __str__(self):
+    def __str__(self) -> str:
         node = self.args[0]
         return f'"{node.token}" in {node.file}:{node.lineno}'
 
@@ -69,7 +69,7 @@ def get_template(path: str, indent: str = '') -> list[Node]:
         return parse(fh.read(), path)
 
 
-def is_standalone(line):
+def is_standalone(line: str) -> bool:
     nodes = list(tokenize(line, ''))
     return (
         len(nodes) == 3
